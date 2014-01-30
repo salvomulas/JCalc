@@ -13,9 +13,9 @@ public class OperationPad extends JPanel implements Components {
      * Class constructor
      */
     public OperationPad () {
-        setLayout(new GridLayout(4,1,5,5));
-        initComponents();
-        layoutComponents();
+        this.setLayout(new GridLayout(4, 1, 5, 5));
+        this.initComponents();
+        this.layoutComponents();
     }
 
     @Override
@@ -28,9 +28,14 @@ public class OperationPad extends JPanel implements Components {
 
     @Override
     public void layoutComponents() {
-        add(add);
-        add(subtract);
-        add(multiply);
-        add(divide);
+        this.add(add);
+        this.add(subtract);
+        this.add(multiply);
+        this.add(divide);
+    }
+
+    @Override
+    public void addEvents() {
+
     }
 }

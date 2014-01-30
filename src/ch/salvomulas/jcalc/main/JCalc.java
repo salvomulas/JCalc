@@ -20,7 +20,7 @@ public class JCalc {
             @Override
             public void run() {
                 try {
-                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
                     new Window();
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();

@@ -15,4 +15,9 @@ public interface Components {
      */
     public void layoutComponents ();
 
+    /**
+     * Method for adding several events to the class
+     */
+    public void addEvents();
+
 }
