@@ -18,6 +18,8 @@ public class Window extends JFrame implements Components, ActionListener {
     public Window () {
         super("JCalc");
         this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        this.setResizable(false);
+        this.setJMenuBar(new Menu());
         this.initComponents();
         this.addEvents();
         this.layoutComponents();

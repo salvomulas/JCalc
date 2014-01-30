@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 public class NumPad extends JPanel implements Components, ActionListener {
 
     private JButton [] num;
-    private JButton dzero, dot;
+    private JButton clear, dot;
 
     /**
      * Class constructor
@@ -25,7 +25,7 @@ public class NumPad extends JPanel implements Components, ActionListener {
     @Override
     public void initComponents() {
         num = new JButton [10];
-        dzero = new JButton("00");
+        clear = new JButton("C");
         dot = new JButton (".");
         for (int i = 0; i<num.length; i++) {
             num[i] = new JButton (Integer.toString(i));
@@ -33,9 +33,9 @@ public class NumPad extends JPanel implements Components, ActionListener {
     }
 
     public void addEvents() {
-        dzero.addActionListener(this);
+        clear.addActionListener(this);
         dot.addActionListener(this);
-        dzero.setFocusable(false);
+        clear.setFocusable(false);
         dot.setFocusable(false);
         for (int i = 0; i<num.length; i++) {
             num[i].addActionListener(this);
@@ -55,8 +55,8 @@ public class NumPad extends JPanel implements Components, ActionListener {
         this.add(num[2]);
         this.add(num[3]);
         this.add(num[0]);
-        this.add(dzero);
         this.add(dot);
+        this.add(clear);
     }
 
     @Override
@@ -81,8 +81,8 @@ public class NumPad extends JPanel implements Components, ActionListener {
             System.out.println("Button 8 pressed");
         } else if (e.getSource() == this.num[9]) {
             System.out.println("Button 9 pressed");
-        } else if (e.getSource() == this.dzero) {
-            System.out.println("Button 00 pressed");
+        } else if (e.getSource() == this.clear) {
+            System.out.println("Button CLEAR pressed");
         } else if (e.getSource() == this.dot) {
             System.out.println("Button dot pressed");
         }
