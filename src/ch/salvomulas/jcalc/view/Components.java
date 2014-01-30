@@ -11,13 +11,13 @@ public interface Components {
     public void initComponents ();
 
     /**
-     * Method for drawing the layout of all initialised components
-     */
-    public void layoutComponents ();
-
-    /**
      * Method for adding several events to the class
      */
     public void addEvents();
+
+    /**
+     * Method for drawing the layout of all initialised components
+     */
+    public void layoutComponents ();
 
 }

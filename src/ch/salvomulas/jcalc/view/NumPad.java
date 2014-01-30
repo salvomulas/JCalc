@@ -35,8 +35,11 @@ public class NumPad extends JPanel implements Components, ActionListener {
     public void addEvents() {
         dzero.addActionListener(this);
         dot.addActionListener(this);
+        dzero.setFocusable(false);
+        dot.setFocusable(false);
         for (int i = 0; i<num.length; i++) {
             num[i].addActionListener(this);
+            num[i].setFocusable(false);
         }
     }
 

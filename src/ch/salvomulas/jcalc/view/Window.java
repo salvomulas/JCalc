@@ -1,13 +1,12 @@
 package ch.salvomulas.jcalc.view;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 /**
  * Main view class for the GUI
  */
-public class Window extends JFrame implements Components {
+public class Window extends JFrame implements Components, ActionListener {
 
     private JPanel panel;
     private JTextField display;
@@ -28,8 +27,10 @@ public class Window extends JFrame implements Components {
     public void initComponents () {
         this.setVisible(true);
         equals = new JButton("=");
+        equals.setFocusable(false);
         panel = new JPanel (new BorderLayout(10,10));
         display = new JTextField();
+        display.setFocusable(false);
     }
 
     @Override
@@ -43,6 +44,8 @@ public class Window extends JFrame implements Components {
                 }
             }
         });
+        this.addKeyListener(new MainKeyListener());
+        equals.addActionListener(this);
     }
 
     @Override
@@ -54,6 +57,22 @@ public class Window extends JFrame implements Components {
         panel.add(new NumPad(), BorderLayout.CENTER);
         panel.add(equals, BorderLayout.LINE_END);
         this.pack();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == this.equals) {
+            System.out.println("Button EQUALS pressed");
+        }
+    }
+
+    /**
+     * Inner class for implementing the KeyListener on the entire window
+     */
+    class MainKeyListener extends KeyAdapter {
+        public void keyTyped (KeyEvent e) {
+            System.out.println(e.getKeyChar()+" Key pressed");
+        }
     }
 
 }
