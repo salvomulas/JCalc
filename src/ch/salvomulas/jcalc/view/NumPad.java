@@ -1,8 +1,10 @@
 package ch.salvomulas.jcalc.view;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import ch.salvomulas.jcalc.*;
 
 /**
  * The numeric pad panel for the main window

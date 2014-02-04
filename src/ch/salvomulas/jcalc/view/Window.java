@@ -1,7 +1,9 @@
 package ch.salvomulas.jcalc.view;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import ch.salvomulas.jcalc.main.Calculator;
 
 /**
  * Main view class for the GUI
@@ -11,6 +13,7 @@ public class Window extends JFrame implements Components, ActionListener {
     private JPanel panel;
     private JTextField display;
     private JButton equals;
+    private Calculator calc;
 
     /**
      * Method constructor
@@ -23,6 +26,12 @@ public class Window extends JFrame implements Components, ActionListener {
         this.initComponents();
         this.addEvents();
         this.layoutComponents();
+        calc = new Calculator();
+        this.getResult();
+    }
+
+    public void getResult () {
+        display.setText(new Double(calc.getResult()).toString());
     }
 
     @Override
